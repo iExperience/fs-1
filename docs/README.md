@@ -4,11 +4,11 @@ Welcome to iXperience Full Stack 2019!
 
 [[toc]]
 
-# Visual Studio Code Editor
+## Visual Studio Code Editor
 
-# Command Line / Terminal
+## Command Line / Terminal
 
-## Mac
+### Mac
 
 Change directory to some folder
 ```bash
@@ -40,7 +40,7 @@ Print working directory
 pwd
 ```
 
-## Windows
+### Windows
 
 Change directory to some folder
 ```bash
@@ -72,7 +72,7 @@ Move or rename folder/file x to y
 move x y
 ```
 
-# Yarn
+## Yarn
 __Fast, reliable and secure dependency management tool__
 
 Node.js includes NPM. You can choose to use NPM or Yarn.
@@ -113,9 +113,9 @@ __example__
 yarn start
 ```
 
-# Git
+## Git
 
-# Ionic
+## Ionic
 
 
 ``` js{4}
