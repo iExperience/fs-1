@@ -4,8 +4,6 @@ Welcome to iXperience Full Stack 2019!
 
 [[toc]]
 
-## Visual Studio Code Editor
-
 ## Command Line / Terminal
 
 ### Mac
@@ -115,15 +113,38 @@ yarn start
 
 ## Git
 
-## Ionic
-
-
-``` js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
+Copy a repo to your local machine
+```git
+git clone <url>
 ```
+
+Find out the status of all your files
+```git
+git status
+```
+
+Bring the code down from your repository
+```git
+git pull <remote> <branch>
+
+git pull origin master
+```
+
+Add all of your changes to be committed
+```git
+git add -a .
+```
+
+Commit your changes to the version history
+```git
+git commit -m "My cool new version"
+```
+
+Push your changes up to the remote
+```git
+git push <remote> <branch>
+
+git push origin master
+```
+
+## Ionic
