@@ -371,3 +371,168 @@ export class AppComponent {
 }
 
 ```
+
+### app-routing.module.ts
+
+```ts{4-7}
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+```
+
+### home.module.ts
+
+```ts{8-13}
+import { HomePage } from './home.page';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: HomePage
+      }
+    ])
+  ],
+  declarations: [HomePage]
+})
+export class HomePageModule {}
+```
+
+### home.page.ts
+
+```ts{3-7}
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+})
+export class HomePage {
+
+}
+```
+
+### home.page.html
+
+```html
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  The world is your oyster.
+
+  ...
+</ion-content>
+
+```
+
+### home.page.scss
+
+```css
+.avatar {
+  margin: auto;
+}
+```
+
+```html
+<ion-content>
+  <ion-avatar class="avatar">
+    <img
+      src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+    />
+  </ion-avatar>
+<ion-content>
+```
+
+### DateTime Example TS
+
+```ts{10-14}
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+})
+export class HomePage {
+
+  public myDateOfBirth: String;
+
+  ionViewDidEnter() {
+    this.myDateOfBirth = "1994-10-03";
+  }
+}
+```
+
+### DateTime Example HTML
+
+```html{4-8}
+...
+<ion-list>
+  <ion-item>
+    <ion-label>Date of Birth</ion-label>
+    <ion-datetime
+      disabled
+      displayFormat="MM/DD/YYYY"
+      [(ngModel)]="myDateOfBirth"
+    ></ion-datetime>
+  </ion-item>
+</ion-list>
+...
+```
+
+### Button Example TS
+
+```ts{16-18}
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+})
+export class HomePage {
+
+  public myDateOfBirth: String;
+
+  ionViewDidEnter() {
+    this.myDateOfBirth = "1994-10-03";
+  }
+
+  pressMe() {
+    alert("Hi!!");
+  }
+}
+
+```
+
+### Button Example HTML
+
+```html
+...
+<ion-button (click)="pressMe()">Press Me</ion-button>
+...
+```
